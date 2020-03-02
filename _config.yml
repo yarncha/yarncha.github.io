@@ -5,12 +5,11 @@
 # 你的博客名称，请用你想要的博客名替换“LOFFER”，以下修改都可类似处理
 # 注意，“name: LOFFER”，冒号后面的空格不可以省略。
 # 井号后面的文字是说明文档，不会被程序读取。
-name: LOFFER
-# 描述/签名
-description: 一个可以fork的博客
+name: yam
+description: yamcha's blog
 
 #
-# 下面的设定都是可选的
+# The following settings are optional
 #
 
 # 你的博客logo图片URL，建议尺寸不超过300px × 300px
@@ -22,13 +21,13 @@ favicon: https://raw.githubusercontent.com/FromEndWorld/LOFFER/master/images/fav
 
 # 菜单中的按钮
 navigation:
-  - name: 首页
+  - name: home
     url: /
-  - name: 关于
+  - name: about
     url: /about
-  - name: 归档
+  - name: archive
     url: /archive
-  - name: 标签
+  - name: tags
     url: /tags
 
 # 每页的文章数
@@ -36,8 +35,8 @@ paginate: 8
 
 # social networking links
 footer-links:
-  email:
   github:
+  email:
   leetcode:
 
 # 站点页脚的文字
