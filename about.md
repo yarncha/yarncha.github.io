@@ -1,7 +1,9 @@
 ---
 layout: page
-title: 关于
+title: ABOUT
 permalink: /about/
 ---
 
-这是一个关于页面，请编辑about.md以介绍你的博客。
+2020. 03. 02 ~
+2020년 졸업프로젝트를 위한 깃허브 블로그
+난독화에 대한 내용 포스팅 예정
