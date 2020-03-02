@@ -1,21 +1,56 @@
-<!DOCTYPE html>
-<html lang="ko">
+---
+layout: default
+---
 
-<head>
-  <meta charset="utf-8">
-  <title></title>
-</head>
+{% if site.posts.size == 0 %}
+  <h2>No post found</h2>
+{% endif %}
 
-<body>
-  <p>지킬 템플릿을 이용하려 했으나 시간 부족으로 우선 공부한 내용들을 티스토리에 작성해 두었습니다. 추후 깃허브 블로그로 수정 예정입니다.</p>
-  <ol>
-    <li> <a href="https://yam-cha.tistory.com/37">소스 코드 난독화란?</a>
-    </li>
-    <!-- <li> <a href="https://yam-cha.tistory.com/38">바이너리 난독화 예제를 통한 연습/기법 익히기 1 (예제 분석)</a>
-    </li>
-    <li> <a href="https://yam-cha.tistory.com/39">바이너리 난독화 예제를 통한 연습/기법 익히기 2 (난독화)</a>
-    </li> -->
-  </ol>
-</body>
+<div class="posts">
+  {% for post in paginator.posts %}
+    <article class="post">
+      <h1>
+        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+      </h1>
 
-</html>
+      <div clsss="meta">
+        <span class="date">
+          {{ post.date | date: "%Y-%m-%d" }}
+        </span>
+
+        <ul class="tag">
+          {% for tag in post.tags %}
+          <li>
+            <a href="{{ site.url }}{{ site.baseurl }}/tags#{{ tag }}">
+              {{ tag }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="entry">
+        {{ post.excerpt | truncate: 200 }}
+      </div>
+
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+    </article>
+  {% endfor %}
+</div>
+
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <span class="prev">
+      <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="prev">
+        ← 上一页
+      </a>
+    </span>
+  {% endif %}
+  {% if paginator.next_page %}
+    <span class="next">
+      <a href="{{ site.baseurl}}{{ paginator.next_page_path }}" class="next">
+        下一页 →
+      </a>
+    </span>
+  {% endif %}
+</div>
