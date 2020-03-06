@@ -12,5 +12,5 @@ Since 2020. 03. 02 ~
 
 >1. 난독화란?
 ><https://yarncha.github.io/intro/>
->2. opaque predicate
+>2. Opaque predicate
 ><https://yarncha.github.io/opaque-prediciate/>
