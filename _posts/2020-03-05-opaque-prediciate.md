@@ -29,23 +29,25 @@ comments: true
 
     s실행할 때마다 분기문을 타는 방향은 다르지만, 결과는 항상 같게 되는 방법이다. Correlated와 adjacent의 두 가지 성질을 가진다.
 
-  [^4]&#x3A; Fuzzing : 임의의 데이터를 input으로 넣어보면서 프로그램의 작동을 확인하는 방법.
-  [^5]&#x3A; x2는 항상 양수가 되는 것과 같은 수학적 명제
+  [^4]: Fuzzing : 임의의 데이터를 input으로 넣어보면서 프로그램의 작동을 확인하는 방법.
+  [^5]: x2는 항상 양수가 되는 것과 같은 수학적 명제.
 
 # 2. 적용 예시
 
-```
-int main(int a, int b)
-{
-  int result = 0;
-  result = a + b;
-  return result;
-}
-```
+  ```
+  int main(int a, int b)
+  {
+    int result = 0;
+    result = a + b;
+    return result;
+  }
+  ```
 
-위의 코드는 두 parameter를 받아서 더하는 간단한 코드이다. 이를 앞에서 서술한 3가지의 방법으로 난독화 해 보았다.
-  2.1. Invariant Opaque Predicates
-  항상 같은 값이 나오는 조건을 a^2>=0으로 두고, return을 제외한 stmt가 나올 때마다 난독화하였다.
+  위의 코드는 두 parameter를 받아서 더하는 간단한 코드이다. 이를 앞에서 서술한 3가지의 방법으로 난독화 해 보았다.
+
+  ### 2.1. Invariant Opaque Predicates
+  
+    항상 같은 값이 나오는 조건을 a^2>=0으로 두고, return을 제외한 stmt가 나올 때마다 난독화하였다.
 
     int main(int a, int b)
     {
