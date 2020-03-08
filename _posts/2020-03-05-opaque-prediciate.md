@@ -12,7 +12,7 @@ comments: true
 ----------
 한 방향으로 실행되는 조건문을 만들고, 실행되지 않는 부분에 쓰레기 코드를 삽입하는 대표적인 난독화 방법 중 하나이다. 이는 프로그램 일부를 최적화하는 것을 어렵게 하고, 제어 흐름을 복잡하게 만듦으로써 프로그램 분석을 방해할 수 있다.[^1][^2]
 
-3가지 유형으로 구분할 수 있다.[^3]
+  3가지 유형으로 구분할 수 있다.[^3]
 
   1.1. Invariant Opaque Predicates
 
@@ -101,6 +101,6 @@ int main(int a, int b)
 
 전부 코드를 읽고 단순 변환하는 단계에서 바꾸어 보았는데, 직접 바꿔준다는 느낌이 많이 들어서 변환이 이루어지는 단계가 좀더 이르면 좋을 것 같다. 예를 들어 파일을 읽고 따로 구조만 파악하여 바꾸준다는 느낌으로?
 
-  [^1]: Dongpeng Xu, Jiang Ming, Dinghao Wu, "Generalized Dynamic Opaque Predicates: A New Control Flow Obfuscation Method" The Pennsylvania State University
-  [^2]: Geneviev` e Arboit, "A Method for Watermarking Java Programs via Opaque Predicates", McGill University
-  [^3]: Jiang Ming, Dongpeng Xu, Li Wang, Dinghao Wu, "LOOP: Logic-Oriented Opaque Predicate Detection in Obfuscated Binary Code", The Pennsylvania State University
+  [^1]: Dongpeng Xu, Jiang Ming, Dinghao Wu. (n.d.). Generalized Dynamic Opaque Predicates: A New Control Flow Obfuscation Method(College of Information Sciences and Technology). The Pennsylvania State University, n.p..
+  [^2]: Genevi`eve Arboit. (n.d.). A Method for Watermarking Java Programs via Opaque Predicates(School of Computer Science, Crypto and Quantum Info Lab). McGill University, n.p..
+  [^3]: Jiang Ming, Dongpeng Xu, Li Wang, Dinghao Wu. (n.d.). LOOP: Logic-Oriented Opaque Predicate Detection in Obfuscated Binary Code(College of Information Sciences and Technology). The Pennsylvania State University, n.p..
