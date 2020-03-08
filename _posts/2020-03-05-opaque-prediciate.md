@@ -14,9 +14,9 @@ comments: true
 
   3가지 유형으로 구분할 수 있다.[^3]
 
-###     1.1. Invariant Opaque Predicates
+  1.1. Invariant Opaque Predicates
 
-    어떤 값을 넣어도 같은 결과가 나오는 분기[^5]를 조건문에 작성하는 방법. 잘 알려진 명제를 활용하여 작성한다. 이는 fuzzing[^4]을 통해 어떤 결과가 나오지 않는지를 확인할 수 있다.
+  어떤 값을 넣어도 같은 결과가 나오는 분기[^5]를 조건문에 작성하는 방법. 잘 알려진 명제를 활용하여 작성한다. 이는 fuzzing[^4]을 통해 어떤 결과가 나오지 않는지를 확인할 수 있다.
 
   ### 1.2. Contextual Opaque Predicates
 
@@ -61,7 +61,8 @@ comments: true
       return result;
     }
 
-  2.2. Contextual Opaque Predicates
+###  2.2. Contextual Opaque Predicates
+
     para>0일 경우는 para^2>1이므로, stmt를 para^2>1을 분기로 가지는 조건문으로 묶고 para>0인 (조건을 만족하는) para를 명시해 두었다.
 
     int main(int a, int b)
@@ -77,7 +78,8 @@ comments: true
       return result;
     }
 
-  2.3. Dynamic Opaque Predicate
+###  2.3. Dynamic Opaque Predicate
+
   para는 랜덤 값이 들어가도록 해 둔뒤, 첫 번째 조건문에서는 para>0, 두 번째 조건문에서는 para&lt;=0을 조건으로 둔다. 첫 번째와 두번째는 결국 true->false 또는 false->true일 수 밖에 없는데, 이 두 경우의 output이 같을 수 있도록 한다. true에서 result--;를 했으면 false에서는 result++;를 넣어주는 방식이다. 이는 앞의 두 방식과는 다르게, 종료하기 return문 전에 연산을 수행할 수 있게 하였다.
 
     int main(int a, int b)
