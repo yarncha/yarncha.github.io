@@ -32,14 +32,16 @@ comments: true
 [^4]&#x3A; Fuzzing : 임의의 데이터를 input으로 넣어보면서 프로그램의 작동을 확인하는 방법.
 [^5]&#x3A; x2는 항상 양수가 되는 것과 같은 수학적 명제
 
-\#2. 적용 예시
+# 2. 적용 예시
 
-    int main(int a, int b)
-    {
-      int result = 0;
-      result = a + b;
-      return result;
-    }
+```
+int main(int a, int b)
+{
+  int result = 0;
+  result = a + b;
+  return result;
+}
+```
 
 위의 코드는 두 parameter를 받아서 더하는 간단한 코드이다. 이를 앞에서 서술한 3가지의 방법으로 난독화 해 보았다.
   2.1. Invariant Opaque Predicates
