@@ -99,7 +99,7 @@ int main(int a, int b)
 
   ```  
 
-전부 코드를 읽고 단순 변환하는 단계에서 바꾸어 보았는데, 직접 바꿔준다는 느낌이 많이 들어서 변환이 이루어지는 단계가 좀더 이르면 좋을 것 같다. 예를 들어 파일을 읽고 따로 구조만 파악하여 바꾸준다는 느낌으로?
+전부 코드를 읽고 단순 변환하는 단계에서 바꾸어 보았는데, 직접 바꿔준다는 느낌이 많이 들어서 변환이 이루어지는 단계가 좀더 이르면 좋을 것 같다. 예를 들어 파일을 읽고 따로 구조만 파악하여 바꿔준다는 느낌으로?
 
   [^1]: Dongpeng Xu, Jiang Ming, Dinghao Wu. (n.d.). Generalized Dynamic Opaque Predicates: A New Control Flow Obfuscation Method(College of Information Sciences and Technology). The Pennsylvania State University, n.p..
   [^2]: Genevi`eve Arboit. (n.d.). A Method for Watermarking Java Programs via Opaque Predicates(School of Computer Science, Crypto and Quantum Info Lab). McGill University, n.p..
