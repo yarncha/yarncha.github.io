@@ -14,18 +14,18 @@ comments: true
 
   3가지 유형으로 구분할 수 있다.[^3]
 
-  ### 1.1. Invariant Opaque Predicates
+###  1.1. Invariant Opaque Predicates
 
   어떤 값을 넣어도 같은 결과가 나오는 분기[^5]를 조건문에 작성하는 방법. 잘 알려진 명제를 활용하여 작성한다. 이는 fuzzing[^4]을 통해 어떤 결과가 나오지 않는지를 확인할 수 있다.
 
-  ### 1.2. Contextual Opaque Predicates
+###  1.2. Contextual Opaque Predicates
 
   어떠한 전제 조건에서는 항상 같은 값을 낼 수 있는 분기를 조건문에 작성하는 방법. 전제 조건의 값만 알아도 어떤 조건을 타게 되는지 알 수 있다.
 
   예를 들면, 다음과 같은 그래프에서는 x>1일 경우 항상 양수이므로, x>1을 전제 조건으로 주는 것과 같다.
   ![](<>)
 
-  ### 1.3. Dynamic Opaque Predicate
+###  1.3. Dynamic Opaque Predicate
 
   실행할 때마다 분기문을 타는 방향은 다르지만, 결과는 항상 같게 되는 방법이다. Correlated와 adjacent의 두 가지 성질을 가진다.
 
@@ -45,7 +45,7 @@ comments: true
 
   위의 코드는 두 parameter를 받아서 더하는 간단한 코드이다. 이를 앞에서 서술한 3가지의 방법으로 난독화 해 보았다.
 
-  ### 2.1. Invariant Opaque Predicates
+###  2.1. Invariant Opaque Predicates
 
     항상 같은 값이 나오는 조건을 a^2>=0으로 두고, return을 제외한 stmt가 나올 때마다 난독화하였다.
 
