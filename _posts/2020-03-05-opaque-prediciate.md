@@ -14,7 +14,7 @@ comments: true
 
   3가지 유형으로 구분할 수 있다.[^3]
 
-  1.1. Invariant Opaque Predicates
+  ### 1.1. Invariant Opaque Predicates
 
   어떤 값을 넣어도 같은 결과가 나오는 분기[^5]를 조건문에 작성하는 방법. 잘 알려진 명제를 활용하여 작성한다. 이는 fuzzing[^4]을 통해 어떤 결과가 나오지 않는지를 확인할 수 있다.
 
