@@ -28,7 +28,7 @@ comments: true
 
 # 2. 적용 예시
 
-  ```
+  ```c
   int main(int a, int b)
   {
     int result = 0;
