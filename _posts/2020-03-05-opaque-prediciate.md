@@ -42,56 +42,62 @@ comments: true
 
     항상 같은 값이 나오는 조건을 a^2>=0으로 두고, return을 제외한 stmt가 나올 때마다 난독화하였다.
 
-    int main(int a, int b)
-    {
-      int result = 0;
-      if (a * a >= 0) {
-        result = a + b;
-      } else {
-        int temp = 0;
-        result = temp;
-      }
-      return result;
+  ```
+  int main(int a, int b)
+  {
+    int result = 0;
+    if (a * a >= 0) {
+      result = a + b;
+    } else {
+      int temp = 0;
+      result = temp;
     }
+    return result;
+  }
+  ```
 
 ###  2.2. Contextual Opaque Predicates
 
     para>0일 경우는 para^2>1이므로, stmt를 para^2>1을 분기로 가지는 조건문으로 묶고 para>0인 (조건을 만족하는) para를 명시해 두었다.
 
-    int main(int a, int b)
-    {
-      int result = 0;
-      int para = 2;
-      if (para * para >= 0) {
-        result = a + b;
-      } else {
-        int temp = 0;
-        result = temp;
-      }
-      return result;
-    }
+```
+int main(int a, int b)
+{
+  int result = 0;
+  int para = 2;
+  if (para * para >= 0) {
+    result = a + b;
+  } else {
+    int temp = 0;
+    result = temp;
+  }
+  return result;
+}
+```
 
 ###  2.3. Dynamic Opaque Predicate
 
   para는 랜덤 값이 들어가도록 해 둔뒤, 첫 번째 조건문에서는 para>0, 두 번째 조건문에서는 para&lt;=0을 조건으로 둔다. 첫 번째와 두번째는 결국 true->false 또는 false->true일 수 밖에 없는데, 이 두 경우의 output이 같을 수 있도록 한다. true에서 result--;를 했으면 false에서는 result++;를 넣어주는 방식이다. 이는 앞의 두 방식과는 다르게, 종료하기 return문 전에 연산을 수행할 수 있게 하였다.
 
-    int main(int a, int b)
-    {
-    	int result = 0;
-    	result = a + b;
-    	int para = rand() % 9;
-      if (para * para >= 0) {
-        result--;
-      } else {
-        result++;
-      }
-      if (para * para < 0) {
-        result++;
-      } else {
-        result--;
-      }
-      return result;
-    }
+```
+int main(int a, int b)
+{
+  int result = 0;
+  result = a + b;
+  int para = rand() % 9;
+  if (para * para >= 0) {
+    result--;
+  } else {
+    result++;
+  }
+  if (para * para < 0) {
+    result++;
+  } else {
+    result--;
+  }
+  return result;
+}
+```
 
 전부 코드를 읽고 단순 변환하는 단계에서 바꾸어 보았는데, 직접 바꿔준다는 느낌이 많이 들어서 변환이 이루어지는 단계가 좀더 이르면 좋을 것 같다. 예를 들어 파일을 읽고 따로 구조만 파악하여 바꿔준다는 느낌으로?
 
