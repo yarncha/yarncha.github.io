@@ -40,7 +40,7 @@ comments: true
 
 ###  2.1. Invariant Opaque Predicates
 
-항상 같은 값이 나오는 조건을 a^2>=0으로 두고, return을 제외한 stmt가 나올 때마다 난독화하였다.
+항상 같은 값이 나오는 조건을 a^2^>=0으로 두고, return을 제외한 stmt가 나올 때마다 난독화하였다.
 
   ```
   int main(int a, int b)
@@ -58,7 +58,7 @@ comments: true
 
 ###  2.2. Contextual Opaque Predicates
 
-para>0일 경우는 para^2>1이므로, stmt를 para^2>1을 분기로 가지는 조건문으로 묶고 para>0인 (조건을 만족하는) para를 명시해 두었다.
+para>0일 경우는 para^2^>1이므로, stmt를 para^2^>1을 분기로 가지는 조건문으로 묶고 para>0인 (조건을 만족하는) para를 명시해 두었다.
 
 ```
 int main(int a, int b)
@@ -77,7 +77,7 @@ int main(int a, int b)
 
 ###  2.3. Dynamic Opaque Predicate
 
-para는 랜덤 값이 들어가도록 해 둔뒤, 첫 번째 조건문에서는 para>0, 두 번째 조건문에서는 para&lt;=0을 조건으로 둔다. 첫 번째와 두번째는 결국 true->false 또는 false->true일 수 밖에 없는데, 이 두 경우의 output이 같을 수 있도록 한다. true에서 result--;를 했으면 false에서는 result++;를 넣어주는 방식이다. 이는 앞의 두 방식과는 다르게, 종료하기 return문 전에 연산을 수행할 수 있게 하였다.
+para는 랜덤 값이 들어가도록 해 둔뒤, 첫 번째 조건문에서는 para>0, 두 번째 조건문에서는 para&lt;=0을 조건으로 둔다. 첫 번째와 두번째는 결국 true→false 또는 false→true일 수 밖에 없는데, 이 두 경우의 output이 같을 수 있도록 한다. true에서 result--;를 했으면 false에서는 result++;를 넣어주는 방식이다. 이는 앞의 두 방식과는 다르게, 종료하기 return문 전에 연산을 수행할 수 있게 하였다.
 
 ```
 int main(int a, int b)
