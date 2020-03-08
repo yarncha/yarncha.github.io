@@ -17,7 +17,7 @@ comments: true
 
 ###  1.2. Contextual Opaque Predicates
   어떠한 전제 조건에서는 항상 같은 값을 낼 수 있는 분기를 조건문에 작성하는 방법. 전제 조건의 값만 알아도 어떤 조건을 타게 되는지 알 수 있다.   예를 들면, 다음과 같은 그래프에서는 x>1일 경우 항상 양수이므로, x>1을 전제 조건으로 주는 것과 같다.
-  ![graph](<2020-03-05-opaque-prediciate_01.png>)
+  ![graph](<\images\2020-03-05-opaque-prediciate_01.png>)
 
 ###  1.3. Dynamic Opaque Predicate
   실행할 때마다 분기문을 타는 방향은 다르지만, 결과는 항상 같게 되는 방법이다. Correlated와 adjacent의 두 가지 성질을 가진다.
