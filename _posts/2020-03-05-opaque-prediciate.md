@@ -14,9 +14,9 @@ comments: true
 
   3가지 유형으로 구분할 수 있다.[^3]
 
-  ### 1.1. Invariant Opaque Predicates
+###     1.1. Invariant Opaque Predicates
 
-  어떤 값을 넣어도 같은 결과가 나오는 분기[^5]를 조건문에 작성하는 방법. 잘 알려진 명제를 활용하여 작성한다. 이는 fuzzing[^4]을 통해 어떤 결과가 나오지 않는지를 확인할 수 있다.
+    어떤 값을 넣어도 같은 결과가 나오는 분기[^5]를 조건문에 작성하는 방법. 잘 알려진 명제를 활용하여 작성한다. 이는 fuzzing[^4]을 통해 어떤 결과가 나오지 않는지를 확인할 수 있다.
 
   ### 1.2. Contextual Opaque Predicates
 
@@ -27,7 +27,7 @@ comments: true
 
   ### 1.3. Dynamic Opaque Predicate
 
-  s실행할 때마다 분기문을 타는 방향은 다르지만, 결과는 항상 같게 되는 방법이다. Correlated와 adjacent의 두 가지 성질을 가진다.
+  실행할 때마다 분기문을 타는 방향은 다르지만, 결과는 항상 같게 되는 방법이다. Correlated와 adjacent의 두 가지 성질을 가진다.
 
   [^4]: Fuzzing : 임의의 데이터를 input으로 넣어보면서 프로그램의 작동을 확인하는 방법.
   [^5]: x2는 항상 양수가 되는 것과 같은 수학적 명제.
