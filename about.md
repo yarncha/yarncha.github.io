@@ -20,7 +20,7 @@ ObfusKorea 깃허브 주소 : <>
 ><https://yarncha.github.io/>
 >2. [3월 2주] 난독화 기술 : Opaque predicate
 ><https://yarncha.github.io/02/>
->3. [3월 3주] 난독화 기술 개발 1 - 다양한 난독화 기법에 대한 아이디어와 시도
+>3. [3월 3주] 
 ><https://yarncha.github.io/>
 >4. [3월 4주]
 ><https://yarncha.github.io/>
