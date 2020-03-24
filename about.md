@@ -18,8 +18,8 @@ ObfusKorea 깃허브 주소 : <>
 
 >1. [3월 1주] 난독화란? DSE에도 안전한 난독화!
 ><https://yarncha.github.io/>링크수정하기
->2. [3월 2주] 난독화 하는 방법의 일종 : Opaque predicate
-><https://yarncha.github.io/02/>링크수정하기
+>2. [3월 2주] 난독화 기술 : Opaque predicate
+><https://yarncha.github.io/02/>
 >3. [3월 2주] 난독화 기술 개발 1 - 개발 초안
 ><https://yarncha.github.io/>
 >4. [3월 2주]
