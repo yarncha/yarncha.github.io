@@ -1,139 +1,190 @@
-LOFFER是个可以帮助你get off from LOFTER的软件（我知道这个pun很烂）。
+# Chirpy
 
-这是一个可以通过Fork直接发布在GitHub的Jekyll博客，你不需要编写代码或使用命令行即可获得一个部署在GitHub的博客。
+🌏 English • [简体中文](docs/README_zh-CN.md)
 
-当你看到不认识的术语，请忽略它，我知道程序员不说人话，我都不是程序员但是我已经开始意识到这是因为我们不知道这些概念用人话怎么说。
+[![Build Status](https://github.com/cotes2020/jekyll-theme-chirpy/workflows/build/badge.svg?branch=master&event=push)](https://github.com/cotes2020/jekyll-theme-chirpy/actions?query=branch%3Amaster+event%3Apush)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/8220b926db514f13afc3f02b7f884f4b)](https://app.codacy.com/manual/cotes2020/jekyll-theme-chirpy?utm_source=github.com&utm_medium=referral&utm_content=cotes2020/jekyll-theme-chirpy&utm_campaign=Badge_Grade_Dashboard)
+[![GitHub license](https://img.shields.io/github/license/cotes2020/jekyll-theme-chirpy.svg)](https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/LICENSE)
+[![996.icu](https://img.shields.io/badge/link-996.icu-%23FF4D5B.svg)](https://996.icu)
 
-以下我会尽量用人话解说如何使用这个……LOFFER。
+A minimal, sidebar, responsive web design Jekyll theme, focusing on text presentation, aim to help you easily record and share your knowledge. [Live Demo »](https://chirpy.cotes.info)
 
-## 注意
+[![Devices Mockup](https://raw.githubusercontent.com/cotes2020/jekyll-theme-chirpy/master/assets/img/sample/devices-mockup.png)](https://chirpy.cotes.info)
 
-LOFFER是一个**博客模板**，使用GitHub Pages发布个人博客是没有任何问题的。 **但是:**
+## Table of Contents
 
-- **请勿发布成人向内容** 
-- **不要将大量图片上传到GitHub**
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Credits](#credits)
+- [Support](#support)
+- [License](#license)
 
-如有疑问，请阅读[GitHub Pages官方说明](https://pages.github.com/)。
+## Features
 
-另外，同人作品更好的发布平台是[AO3](https://archiveofourown.org/)，你想你发在AO3还有tag还有kudos还有人看，是吧？
+- Pinned Posts
+- Configurable theme mode
+- Double-level Categories
+- Last modified date for posts
+- Table of Contents
+- Automatically recommend related posts
+- Syntax highlighting
+- Mathematical expressions
+- Search
+- Atom Feeds
+- Disqus Comments
+- Google Analytics
+- GA Pageviews reporting (Advanced)
+- SEO and Performance Optimization
 
+## Installation
 
-## 如何使用
+[Fork **Chirpy**](https://github.com/cotes2020/jekyll-theme-chirpy/fork) on GitHub, and clone the fork to local by:
 
-首先，这个博客主题适应手机阅读，但是，要使用它建立你自己的博客，你需要上电脑操作。
+```terminal
+$ git clone git@github.com:<username>/jekyll-theme-chirpy -b master --single-branch
+```
 
-### 第一步 Fork到你的GitHub
+### Setting up the local envrionment
 
-请点击[GitHub](https://github.com/)，注册一个GitHub账户。我们可以理解Git就是个文件版本管理系统，本身并不需要会代码即可使用。
+If you would like to run or build the project on your local machine, please follow the [Jekyll Docs](https://jekyllrb.com/docs/installation/) to complete the installation of `Ruby`, `RubyGems` and `Bundler`. 
 
-现在你看到的LOFFER，是作为一个GitHub上的Repository（代码库）存在的，你可以把这个代码库复制到你自己的GitHub账户中，这个操作叫做Fork。
+Before running or building for the first time, please complete the installation of the Jekyll plugins. Go to the root directory of project and run:
 
-点击[LOFFER](https://github.com/FromEndWorld/LOFFER)，进入LOFFER的GitHub Repository页面，然后点Fork：
+```terminal
+$ bundle install
+```
 
-![gif](https://raw.githubusercontent.com/FromEndWorld/LOFFER/master/images/fork.gif)
+`bundle` will automatically install all the dependencies specified by `Gemfile`.
 
-然后你立刻就可以看到LOFFER再次出现，这次它已经属于你了，这里我建议你重命名它，点击settings，给你的博客起个名字（请尽量使用字母而非中文）。
+What's more, in order to generate some extra files (*categories*, *tags* and *last modified list*), we need to use some tool scripts. If your machine is running Debian or macOS, make sure that [GNU coreutils](https://www.gnu.org/software/coreutils/) is installed. Otherwise, install by:
 
-![img](https://raw.githubusercontent.com/FromEndWorld/LOFFER/master/images/rename.png)
+- Debian
 
-然后，向下拉页面，你会看到“GitHub Pages”，这是GitHub内置的网站host服务，选择master，如图所示：
+  ```console
+  $ sudo apt-get install coreutils
+  ```
 
-![img](https://raw.githubusercontent.com/FromEndWorld/LOFFER/master/images/pages.png)
+- macOS
 
-在几秒钟后，刷新此页面，你通常会看到这个绿色的东西（如果没看到，多等一会），你的网站已经发布成功，点击这个链接，即可查看：
+  ```console
+  $ brew install coreutils
+  ```
 
-![img](https://raw.githubusercontent.com/FromEndWorld/LOFFER/master/images/published.png)
+## Usage
 
-你可能会看到网站长得很丑，请继续下一步.
+Running [**Chirpy**](https://github.com/cotes2020/jekyll-theme-chirpy/) requires some extra files, which cannot be generated by Jekyll native commands, so please strictly follow the methods mentioned below to run or deploy your website.
 
-### 第二步 设置站点信息
+### Initialization
 
-在你的博客的GitHub代码库页面里，选择Code，文件列表里选择_config.yml，点击打开，点击右上角笔形图标修改文档。
+Go to the root directory of the project and start initialization:
 
-修改完成后，点击“Commit changes”。每次修改过代码库并且commit后，GitHub Pages都会自动重新发布网站，只要等上几分钟，再次刷新你的博客页面，就会看到你的修改了。
+```console
+$ bash tools/init.sh
+```
 
-还有一点，**LOFFER使用的是MIT协议，大意就是全部开源随意使用，如果你要保留自己博文的权利，请编辑LICENSE文件，写上类似“_posts中的文档作者保留权利”这样的内容。**
+> If you not intend to deploy it on GitHub Pages, append parameter option `--no-gh` at the end of the above command.
 
-### 第三步 发布博文
+What it does is:
 
-在你的博客的GitHub代码库页面里，点开_posts文件夹，这里面就是你的博客文章。
+1. Remove some files or directories from your repository:
 
-这些文章使用的格式是Markdown，文件后缀名是md，这是一种非常简单易用的有格式文本标记语言，你应该已经注意到，在LOFFER自带的示例性博文中有一篇中文的Markdown语法介绍。
+    - `.travis.yml`
+    - files under `_posts`
+    - folder `docs`
 
-更简单的办法是使用[Typora](https://typora.io/)，这是一个全图形化界面，全实时预览的Markdown写作软件，非常轻量，而且免费。
+2. If you use the `--no-gh` option, the directory `.github` will be deleted. Otherwise, setup the GitHub Action workflow by removing extension `.hook` of `.github/workflows/pages-deploy.yml.hook`, and then remove the other files and directories in folder `.github`. 
 
-![img](https://raw.githubusercontent.com/FromEndWorld/LOFFER/master/images/Typora.png)
+3. Automatically create a commit to save the changes.
 
-在发布博文前，你需要在文章的头部添加这样的内容，包括你的文章标题，发布日期，作者名，和tag等。
+### Configuration
 
-    ---
-    layout: post
-    title: LOFFER文档
-    date: 2019-06-02
-    Author: 来自中世界
-    categories: 
-    tags: [sample, document]
-    comments: true
-    --- 
+Generally, go to `_config.yml` and configure the variables as needed. Some of them are typical options:
 
-完成后，保存为.md文件，文件名是date-标题，例如 2019-06-02-document.md (注意这里的标题会成为这个post的URL，所以推荐使用字母而非中文，它不影响页面上显示的标题)，然后上传到_posts文件夹，commit，很快就可以在博客上看到新文章了。
+- `url`
+- `avatar`
+- `timezone`
+- `theme_mode`
 
-### 可选：图片怎么办？
+### Run Locally
 
-少量图片可以上传到images文件夹，然后在博文中添加。
+You may want to preview the site contents before publishing, so just run it by:
 
-但是GitHub用来当做图床有滥用之嫌，如果你的博客以图片为主，建议选择外链图床，例如[sm.ms](https://sm.ms/)就是和很好的选择。
+```terminal
+$ bash tools/run.sh
+```
 
-如果想要寻找更适合自己的图床，敬请Google一下。
+Then open a browser and visit to <http://localhost:4000>.
 
-在博文中添加图片的Markdown语法是：`![图片名](URL)`
+Few days later, you may find that the file changes does not refresh in real time by using `run.sh`. Don't worry, the advanced option `-r` (or `--realtime`) will solve this problem, but it requires [**fswatch**](http://emcrisostomo.github.io/fswatch/) to be installed on your machine.
 
-### 可选：添加评论区
+### Deployment
 
-LOFFER支持Disqus评论，虽然Disqus很丑，但是它是免费的，设置起来又方便，因此大家也就不要嫌弃它。
+Before the deployment begins, checkout the file `_config.yml` and make sure the `url` is configured correctly. Furthermore, if you prefer the [*project site*](https://help.github.com/en/github/working-with-github-pages/about-github-pages#types-of-github-pages-sites) and don't use a custom domain, or you want to visit your website with a base url on a web server other than **GitHub Pages**, remember to change the `baseurl` to your project name that starting with a slash. For example, `/project`.
 
-首先，注册一个[Disqus](https://disqus.com/)账户，我们可以选择这个免费方案：
+Assuming you have already gone through the [initialization](#initialization), you can now choose any of the following methods to deploy your website.
 
-![img](https://raw.githubusercontent.com/FromEndWorld/LOFFER/master/images/Disqus-plan.png)
+#### Deploy on GitHub Pages
 
-注册成功后，新建一个站点（site），以LOFFER为例设置步骤如下：
+For security reasons, GitHub Pages build runs on `safe` mode, which restricts us from using tool scripts to generate additional page files. Therefore, we can use GitHub Actions to build the site, store the built site files on a new branch, and use that branch as the source of the Pages service.
 
-首先站点名LOFFER，生成了shortname是loffer，类型可以随便选。
+1. Push any commit to `origin/master` to trigger the GitHub Actions workflow. Once the build is complete, a new remote branch called `gh-pages` will appear, which is used to store the built site files.
+2. Unless you prefer to project sites, rename your repository to `<username>.github.io` on GitHub.
+3. Choose branch `gh-pages` as the [publishing source](https://docs.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) for your GitHub Pages site.
+4. Visit your website at the address indicated by GitHub.
 
-![img](https://raw.githubusercontent.com/FromEndWorld/LOFFER/master/images/Disqus-1.png)
+#### Deploy on Other Platforms
 
-安装时选择Jekyll。
+On platforms other than GitHub, e.g. GitLab, we cannot enjoy the convenience of **GitHub Actions**. However, we have a tool to make up for this shortcoming.
 
-![img](https://raw.githubusercontent.com/FromEndWorld/LOFFER/master/images/Disqus-2.png)
+Commit the changes of your repository first, then run the publish script:
 
-最后填入你的博客地址，语言可以选中文，点Complete，即可！
+```console
+$ bash tools/publish.sh
+```
 
-![img](https://raw.githubusercontent.com/FromEndWorld/LOFFER/master/images/Disqus-3.png)
+> Please note that the *Recent Update* list requires the latest git-log date of posts, thus make sure the changes in `_posts` have been committed before running this command.
 
-然后需要回到你的博客，修改_config.yml文件，在disqus字段填上你的shortname，commit，完成！
+It will automatically generates the *Latest Modified Date* and *Categories / Tags* page for the posts and submit a commit, then push to `origin/master`. Its output is similar to the following log:
 
-### 导入LOFTER的内容
+```terminal
+[INFO] Success to update lastmod for 4 post(s).
+[INFO] Succeed! 3 category-pages created.
+[INFO] Succeed! 4 tag-pages created.
+[INFO] Published successfully!
+```
 
-这部分由于LOFTER的导出文件十分~~优秀~~，需要另外解决。
+Lastly, enable the pages service according to the instructions of the platform you choose.
 
-诸位可以使用[墨问非名太太的脚本](http://underdream.lofter.com/post/38ea7d_1c5d8a983)，其中选择Jekyll输出即可。
+#### Deploy on Private Server
 
-我个人也在折腾一个脚本，目前还没有完全debug清楚，不管如何，请先在lofter里导出一下，存在本地也是好的，贴吧可以让2017以前所有内容全部消失，中国互联网，没什么不可能发生的。
+In the root of the source project, build your site by:
 
-## 致谢
+```console
+$ bash tools/build.sh -d /path/to/site/
+```
 
-* [Jekyll](https://github.com/jekyll/jekyll) - 这是本站存在的根基
-* [Kiko-now](<https://github.com/aweekj/kiko-now>) - 我首先是fork这个主题，然后再其上进行修改汉化，才有了LOFFER
-* [Font Awesome](<https://fontawesome.com/>) - 社交网络图标来自FontAwesome的免费开源内容
+The generated site files will be placed in the root of `/path/to/site/`. Now you should upload those files to your web server, such as Nginx.
 
+### Documentation
 
+For more details and the better reading experience, please check out the [tutorials on demo site](https://chirpy.cotes.info/categories/tutorial/). In the meanwhile, a copy of the tutorial is also available on the [Wiki](https://github.com/cotes2020/jekyll-theme-chirpy/wiki).
 
-## 帮助这个项目
+## Contributing
 
-介绍更多人来使用它，摆脱lofter自由飞翔！
+The old saying, "Two heads are better than one." Consequently, welcome to report bugs, improve code quality or submit a new feature. For more information, see [contributing guidelines](.github/CONTRIBUTING.md).
 
-当然如果单说写同人的话，我还是建议大家都去AO3，但是自家博客自己架也很酷炫，你还可以选择很多其他的forkable Jeykll主题，GitHub上有很多，或者试试其他博客架设工具，例如Hexo，与代码斗其乐无穷。
+## Credits
 
-最后，回到[LOFFER](https://github.com/FromEndWorld/LOFFER)，给我点一个☆吧！
+This theme is mainly built with [Jekyll](https://jekyllrb.com/) ecosystem, [Bootstrap](https://getbootstrap.com/), [Font Awesome](https://fontawesome.com/) and some other wonderful tools (their copyright information can be found in the relevant files).
 
-![img](https://raw.githubusercontent.com/FromEndWorld/LOFFER/master/images/givemefive.png)
+:tada: Thanks to all the volunteers who contributed to this project, their GitHub IDs are on [this list](https://github.com/cotes2020/jekyll-theme-chirpy/graphs/contributors). Also, I won't forget those guys who submitted the issues or unmerged PR because they reported bugs, shared ideas or inspired me to write more readable documentation.
+
+## Support
+
+If you enjoy this theme or find it helpful, please consider becoming my sponsor, I'd really appreciate it! Click the button <kbd>:heart: Sponsor</kbd> at the top of the [Home Page](https://github.com/cotes2020/jekyll-theme-chirpy) and choose a link that suits you to donate; this will encourage and help me better maintain the project.
+
+## License
+
+This work is published under [MIT](https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/LICENSE) License.
