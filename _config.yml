@@ -8,7 +8,7 @@
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 #--------------------------
 
-title: Miniminimini                          # the main title
+title: Mini                          # the main title
 
 tagline: A text-focused Jekyll theme.  # it will display as the sub-title
 
@@ -22,7 +22,7 @@ url: 'https://yarncha.github.io'
 
 author: your_full_name                  # change to your full name
 
-avatar: /assets/img/sample/avatar.jpg   # support internet resources
+avatar: /images/avatar.png   # support internet resources
 
 github:
   username: yarncha             # change to your github username
