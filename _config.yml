@@ -10,7 +10,7 @@
 
 title: Mini                          # the main title
 
-tagline: A text-focused Jekyll theme.  # it will display as the sub-title
+tagline: 난독화 블로그  # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   A minimal, portfolio, sidebar,
@@ -20,7 +20,7 @@ description: >-                        # used by seo meta and the atom feed
 # Replace with the website url, e.g. 'https://username.github.io'
 url: 'https://yarncha.github.io'
 
-author: your_full_name                  # change to your full name
+author: yarncha                  # change to your full name
 
 avatar: /images/avatar.png   # support internet resources
 
@@ -36,7 +36,7 @@ social:
   links:
     # The first element serves as the copyright owner's link
     - https://twitter.com/username      # change to your twitter homepage
-    - https://github.com/username       # change to your github homepage
+    - https://github.com/yarncha       # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
